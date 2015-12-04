@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container well well-lg">
+    <div class="row col-md-8 col-md-offset-2">
+        <form name="form" ng-submit='form.$valid && addToDo()'>
+            <input type='text' name="new" class="form" ng-model='newtodo' required/>
+            <button class="btn-success">Go</button>
+        </form>
+    </div>
+
+    <div class="row col-md-4 col-md-offset-4">
+        <ul class="nav nav-pills">
+            <li ng-class='{active:isSelected(1)}'><a href class="panel" ng-click="selectTab(1)">All</a></li>
+            <li ng-class='{active:isSelected(2)}'><a href class="panel sec" ng-click="selectTab(2)">Done</a></li>
+        </ul>
+    </div>
+
+    <div class="row row col-md-4 col-md-offset-4">
+        <ul ng-show='isSelected(1)'>
+            <li ng-repeat='todo in todos'>
+               <label for="check"><input type="checkbox" id="check" ng-model='todo.done'/></label>
+                <div ng-class='{done : todo.done}'><p>{{todo.title}}</p></div>
+            </li>
+        </ul>
+    </div>
+    <div class="row row col-md-4 col-md-offset-4">
+        <ul ng-show='isSelected(2)'>
+            <li ng-repeat='todo in todos'>
+                <label for="check"><input ng-if='todo.done' type="checkbox" id="check"/></label>
+                <div ng-if='todo.done'><p>{{todo.title}}</p></div>
+            </li>
+        </ul>
+    </div>
+    <div class="row row col-md-4 col-md-offset-4">
+        <button class="btn-danger" ng-click='removeToDo()'>Clear Completed</button>
+    </div>
+</div>
+
+</body>
+</html>

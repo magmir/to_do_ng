@@ -1,0 +1,58 @@
+body {
+    font-size: 16px;
+}
+
+.well-lg{
+    margin-top: 30px;
+}
+.done {
+    text-decoration: line-through;
+    color:#ccc;
+
+}
+
+ul {
+    list-style: none;
+}
+
+
+.btn-success {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.form {
+    height: 50px;
+    width: 500px;
+}
+
+.nav>li>a {
+    margin-top:20px;
+    padding-left:40px;
+    padding-right: 40px;
+}
+
+.nav>li>a.sec {
+    padding-left:30px;
+    padding-right: 30px;
+    margin-left: 20px;
+}
+
+label {
+    display: block;
+    float: left;
+    padding-right:10px;
+    margin-bottom: 0;
+
+
+}
+
